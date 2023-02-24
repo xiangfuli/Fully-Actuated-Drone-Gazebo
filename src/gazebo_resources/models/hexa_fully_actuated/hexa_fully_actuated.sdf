@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version='1.6'>
-  <model name='hexa_x_tilt'>
+  <model name='hexa_fully_actuated'>
     <!-- Typhoon H body -->
     <pose>0 0 0.26 0 0 3.1415927</pose>
     <link name='base_link'>
@@ -43,7 +43,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/main_body_remeshed_v3.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/main_body_remeshed_v3.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -59,7 +59,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_guard_jybhz.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_guard_jybhz.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -74,7 +74,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_guard_jybhz.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_guard_jybhz.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -89,7 +89,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_guard_jybhz.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_guard_jybhz.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -104,7 +104,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_guard_jybhz.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_guard_jybhz.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -119,7 +119,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_guard_jybhz.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_guard_jybhz.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -134,7 +134,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_guard_jybhz.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_guard_jybhz.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -169,7 +169,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/cgo3_mount_remeshed_v1.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/cgo3_mount_remeshed_v1.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -223,7 +223,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/cgo3_vertical_arm_remeshed_v1.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/cgo3_vertical_arm_remeshed_v1.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -285,7 +285,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/cgo3_horizontal_arm_remeshed_v1.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/cgo3_horizontal_arm_remeshed_v1.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -370,7 +370,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/cgo3_camera_remeshed_v1.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/cgo3_camera_remeshed_v1.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -433,7 +433,7 @@
             <udpPort>5600</udpPort>
         </plugin>
         <plugin name="GeotaggedImagesPlugin" filename="libgazebo_geotagged_images_plugin.so">
-            <robotNamespace>hexa_x_tilt</robotNamespace>
+            <robotNamespace>hexa_fully_actuated</robotNamespace>
             <interval>1</interval>
             <width>3840</width>
             <height>2160</height>
@@ -615,7 +615,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/leg2_remeshed_v3.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/leg2_remeshed_v3.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -634,7 +634,8 @@
         <xyz>-1 0 0</xyz>
         <limit>
           <lower>0</lower>
-          <upper>1</upper>
+          <!-- Set 0 to make sure leg is fixed rather than being able to rotation against body -->
+          <upper>0</upper>
           <effort>100</effort>
           <velocity>-1</velocity>
           <stiffness>100000000</stiffness>
@@ -722,7 +723,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/leg1_remeshed_v3.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/leg1_remeshed_v3.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -741,7 +742,8 @@
         <xyz>1 0 0</xyz>
         <limit>
           <lower>0</lower>
-          <upper>1</upper>
+          <!-- Set 0 to make sure leg is fixed rather than being able to rotation against body -->
+          <upper>0</upper>
           <effort>100</effort>
           <velocity>-1</velocity>
           <stiffness>100000000</stiffness>
@@ -759,7 +761,7 @@
       </physics>
     </joint>
 
-    <link name='hexa_x_tilt/imu_link'>
+    <link name='hexa_fully_actuated/imu_link'>
       <pose>0 0 0 0 0 3.1415927</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -774,8 +776,8 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='hexa_x_tilt/imu_joint' type='revolute'>
-      <child>hexa_x_tilt/imu_link</child>
+    <joint name='hexa_fully_actuated/imu_joint' type='revolute'>
+      <child>hexa_fully_actuated/imu_link</child>
       <parent>base_link</parent>
       <axis>
         <xyz>1 0 0</xyz>
@@ -792,151 +794,8 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <link name='rotor_3'>
-      <pose>0.211396 0.119762 0.082219 0 0.52 -1.04</pose>
-      <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.005</mass>
-        <inertia>
-          <ixx>9.75e-07</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.000273104</iyy>
-          <iyz>0</iyz>
-          <izz>0.000274004</izz>
-        </inertia>
-      </inertial>
-<!--       <collision name='rotor_3_collision'>
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.128</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision> -->
-      <visual name='rotor_3_visual'>
-        <pose>-0.211396 -0.119762 -0.082219 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_ccw_assembly_remeshed_v3.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Blue</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
-      </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='rotor_3_joint' type='revolute'>
-      <child>rotor_3</child>
-      <parent>base_link</parent>
-      <axis>
-        <xyz>0.251 -0.428 0.867</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>10</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.005</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
-    </joint>
+
     <link name='rotor_0'>
-      <pose>0.209396 -0.122762 0.082219 0.0 0.52 1.04</pose>
-      <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.005</mass>
-        <inertia>
-          <ixx>9.75e-07</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.000273104</iyy>
-          <iyz>0</iyz>
-          <izz>0.000274004</izz>
-        </inertia>
-      </inertial>
-<!--       <collision name='rotor_0_collision'>
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.001</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision> -->
-      <visual name='rotor_0_visual'>
-        <pose>-0.211396 -0.119762 -0.082219 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_ccw_assembly_remeshed_v3.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Blue</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
-      </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='rotor_0_joint' type='revolute'>
-      <child>rotor_0</child>
-      <parent>base_link</parent>
-      <axis>
-        <xyz>0.25 0.42 0.86</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>10</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.005</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
-    </joint>
-    <link name='rotor_4'>
       <pose>-0.00187896 0.242705 0.0822169 0 -0.52 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -950,7 +809,7 @@
           <izz>0.000274004</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_4_collision'>
+      <collision name='rotor_0_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -967,12 +826,12 @@
           </friction>
         </surface>
       </collision>
-      <visual name='rotor_4_visual'>
+      <visual name='rotor_0_visual'>
         <pose>0.00187896 -0.242705 -0.0822169 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_cw_assembly_remeshed_v3.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_cw_assembly_remeshed_v3.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -986,8 +845,8 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='rotor_4_joint' type='revolute'>
-      <child>rotor_4</child>
+    <joint name='rotor_0_joint' type='revolute'>
+      <child>rotor_0</child>
       <parent>base_link</parent>
       <axis>
         <xyz>-0.5 0.0 0.867</xyz>
@@ -1009,79 +868,6 @@
       </physics>
     </joint>
     <link name='rotor_1'>
-      <pose>0.211396 -0.119762 0.082219 0 -0.52 -2.09439510239</pose>
-      <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.005</mass>
-        <inertia>
-          <ixx>9.75e-07</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.000273104</iyy>
-          <iyz>0</iyz>
-          <izz>0.000274004</izz>
-        </inertia>
-      </inertial>
-      <collision name='rotor_1_collision'>
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.005</length>
-            <radius>0.128</radius>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='rotor_1_visual'>
-        <pose>0.00187896 -0.242705 -0.0822169 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_cw_assembly_remeshed_v3.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <script>
-            <name>Gazebo/DarkGrey</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
-      </visual>
-      <gravity>1</gravity>
-      <velocity_decay/>
-      <self_collide>0</self_collide>
-    </link>
-    <joint name='rotor_1_joint' type='revolute'>
-      <child>rotor_1</child>
-      <parent>base_link</parent>
-      <axis>
-        <xyz>0.251 0.428 0.867</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>10</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.005</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-        </ode>
-      </physics>
-    </joint>
-
-    <link name='rotor_5'>
       <pose>-0.00187896 -0.242705 0.0822169 0 0.52 -3.1415</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -1112,12 +898,12 @@
           </friction>
         </surface>
       </collision> -->
-      <visual name='rotor_5_visual'>
+      <visual name='rotor_1_visual'>
         <pose>-0.211396 -0.119762 -0.082219 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_ccw_assembly_remeshed_v3.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_ccw_assembly_remeshed_v3.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1131,8 +917,8 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='rotor_5_joint' type='revolute'>
-      <child>rotor_5</child>
+    <joint name='rotor_1_joint' type='revolute'>
+      <child>rotor_1</child>
       <parent>base_link</parent>
       <axis>
         <xyz>-0.5 0.0 0.867</xyz>
@@ -1189,7 +975,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://hexa_x_tilt/meshes/prop_cw_assembly_remeshed_v3.stl</uri>
+            <uri>model://hexa_fully_actuated/meshes/prop_cw_assembly_remeshed_v3.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1225,13 +1011,233 @@
         </ode>
       </physics>
     </joint>
+    <link name='rotor_3'>
+      <pose>0.211396 0.119762 0.082219 0 0.52 -1.04</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000273104</iyy>
+          <iyz>0</iyz>
+          <izz>0.000274004</izz>
+        </inertia>
+      </inertial>
+<!--       <collision name='rotor_3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.128</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision> -->
+      <visual name='rotor_3_visual'>
+        <pose>-0.211396 -0.119762 -0.082219 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://hexa_fully_actuated/meshes/prop_ccw_assembly_remeshed_v3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_3_joint' type='revolute'>
+      <child>rotor_3</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0.251 -0.428 0.867</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>10</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.005</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rotor_4'>
+      <pose>-0.209396 0.122762 0.082219 0.0 0.52 1.04</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000273104</iyy>
+          <iyz>0</iyz>
+          <izz>0.000274004</izz>
+        </inertia>
+      </inertial>
+<!--       <collision name='rotor_4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.001</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision> -->
+      <visual name='rotor_4_visual'>
+        <pose>-0.211396 -0.119762 -0.082219 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://hexa_fully_actuated/meshes/prop_ccw_assembly_remeshed_v3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_4_joint' type='revolute'>
+      <child>rotor_4</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0.25 0.42 0.86</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>10</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.005</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    
+    <link name='rotor_5'>
+      <pose>0.211396 -0.119762 0.082219 0 -0.52 -2.09439510239</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>9.75e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000273104</iyy>
+          <iyz>0</iyz>
+          <izz>0.000274004</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor_5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.128</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rotor_5_visual'>
+        <pose>0.00187896 -0.242705 -0.0822169 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://hexa_fully_actuated/meshes/prop_cw_assembly_remeshed_v3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='rotor_5_joint' type='revolute'>
+      <child>rotor_5</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0.251 0.428 0.867</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>10</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.005</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    
+    
 
 <!--     <include>
       <uri>model://sonar</uri>
     </include> -->
 <!--     <joint name="sonar_joint" type="revolute">
       <child>sonar_model::link</child>
-      <parent>hexa_x_tilt::base_link</parent>
+      <parent>hexa_fully_actuated::base_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -1247,21 +1253,21 @@
       <linkName>base_link</linkName>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='front_right_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='right_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>rotor_0_joint</jointName>
       <linkName>rotor_0</linkName>
-      <turningDirection>ccw</turningDirection>
+      <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>4</motorNumber>
+      <motorNumber>0</motorNumber>
       <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
+      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <!--
       <joint_control_pid>
@@ -1275,21 +1281,21 @@
       </joint_control_pid>
       -->
     </plugin>
-    <plugin name='back_left_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='left_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>rotor_1_joint</jointName>
       <linkName>rotor_1</linkName>
-      <turningDirection>cw</turningDirection>
+      <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>5</motorNumber>
+      <motorNumber>1</motorNumber>
       <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/5</motorSpeedPubTopic>
+      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <!--
       <joint_control_pid>
@@ -1359,21 +1365,21 @@
       </joint_control_pid>
       -->
     </plugin>
-    <plugin name='back_left_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='front_right_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>rotor_4_joint</jointName>
       <linkName>rotor_4</linkName>
-      <turningDirection>cw</turningDirection>
+      <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>0</motorNumber>
+      <motorNumber>4</motorNumber>
       <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+      <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <!--
       <joint_control_pid>
@@ -1387,21 +1393,21 @@
       </joint_control_pid>
       -->
     </plugin>
-    <plugin name='front_left_motor_model' filename='libgazebo_motor_model.so'>
+    <plugin name='back_left_motor_model' filename='libgazebo_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>rotor_5_joint</jointName>
       <linkName>rotor_5</linkName>
-      <turningDirection>ccw</turningDirection>
+      <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.54858e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
-      <motorNumber>1</motorNumber>
+      <motorNumber>5</motorNumber>
       <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+      <motorSpeedPubTopic>/motor_speed/5</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <!--
       <joint_control_pid>
@@ -1581,7 +1587,7 @@
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position_gztopic</joint_control_type>
           <gztopic>/gimbal_roll_cmd</gztopic>
-          <joint_name>hexa_x_tilt::cgo3_camera_joint</joint_name>
+          <joint_name>hexa_fully_actuated::cgo3_camera_joint</joint_name>
         </channel>
         <channel name="gimbal_pitch">
           <input_index>7</input_index>
@@ -1591,7 +1597,7 @@
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position_gztopic</joint_control_type>
           <gztopic>/gimbal_pitch_cmd</gztopic>
-          <joint_name>hexa_x_tilt::cgo3_camera_joint</joint_name>
+          <joint_name>hexa_fully_actuated::cgo3_camera_joint</joint_name>
         </channel>
         <channel name="gimbal_yaw">
           <input_index>8</input_index>
@@ -1601,7 +1607,7 @@
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position_gztopic</joint_control_type>
           <gztopic>/gimbal_yaw_cmd</gztopic>
-          <joint_name>hexa_x_tilt::cgo3_vertical_arm_joint</joint_name>
+          <joint_name>hexa_fully_actuated::cgo3_vertical_arm_joint</joint_name>
         </channel-->
         <channel name="left_leg">
           <input_index>9</input_index>
@@ -1644,7 +1650,7 @@
     <static>0</static>
     <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
       <robotNamespace></robotNamespace>
-      <linkName>hexa_x_tilt/imu_link</linkName>
+      <linkName>hexa_fully_actuated/imu_link</linkName>
       <imuTopic>/imu</imuTopic>
       <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
       <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
@@ -1656,9 +1662,9 @@
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
     <!--plugin name='gimbal_controller' filename='libgazebo_gimbal_controller_plugin.so'>
-      <joint_yaw>hexa_x_tilt::cgo3_vertical_arm_joint</joint_yaw>
-      <joint_roll>hexa_x_tilt::cgo3_horizontal_arm_joint</joint_roll>
-      <joint_pitch>hexa_x_tilt::cgo3_camera_joint</joint_pitch>
+      <joint_yaw>hexa_fully_actuated::cgo3_vertical_arm_joint</joint_yaw>
+      <joint_roll>hexa_fully_actuated::cgo3_horizontal_arm_joint</joint_roll>
+      <joint_pitch>hexa_fully_actuated::cgo3_camera_joint</joint_pitch>
       <control_gimbal_channels>
         <channel>
           <joint_control_pid>
