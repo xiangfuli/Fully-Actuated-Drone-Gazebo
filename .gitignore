@@ -1,0 +1,7 @@
+.catkin_workspace**
+devel/**
+build/**
+
+.vscode/**
+
+**PX4-Autopilot**

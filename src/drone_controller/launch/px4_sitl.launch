@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="robot_name" default="ari_lab_uva"/>
+  <arg name="vehicle" default="hexa_fully_actuated"/>
+
+  <!-- gazebo config -->
+  <include file="$(find gazebo_resources)/launch/gazebo.launch"/>
+  <include file="$(find gazebo_resources)/launch/gazebo_spawn_drone.launch">
+    <arg name="vehicle" value="$(arg vehicle)" />
+  </include>
+
+  <!-- Launch px4 and mavros -->
+  <!-- <node name="px4_sitl" pkg="px4" type="px4" output="screen"
+	  args="$(find px4)/ROMFS/px4fmu_common -s etc/init.d-posix/rcS -i 0">
+  </node> -->
+
+</launch>
